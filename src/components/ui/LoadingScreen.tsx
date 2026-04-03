@@ -56,7 +56,7 @@ export default function LoadingScreen() {
             {/* Logo */}
             <div className="text-center mb-8">
               <div className="font-display text-3xl font-black text-accent-green tracking-wider mb-1">
-                &lt;AS /&gt;
+                &lt;HS /&gt;
               </div>
               <div className="font-mono text-xs text-text-muted tracking-widest uppercase">
                 Portfolio v2.0
