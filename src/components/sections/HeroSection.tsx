@@ -162,7 +162,7 @@ export default function HeroSection() {
               {[
                 { icon: Github, href: personal.github, label: 'GitHub' },
                 { icon: Linkedin, href: personal.linkedin, label: 'LinkedIn' },
-                { icon: Twitter, href: personal.twitter, label: 'Twitter' },
+                // { icon: Twitter, href: personal.twitter, label: 'Twitter' },
                 { icon: Mail, href: `mailto:${personal.email}`, label: 'Email' },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a

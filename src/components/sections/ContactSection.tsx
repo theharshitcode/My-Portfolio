@@ -12,21 +12,32 @@ export default function ContactSection() {
   const { contact, personal } = portfolioData
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('sending')
-    // Simulate send — replace with your EmailJS / Formspree / API call
-    await new Promise(r => setTimeout(r, 1500))
-    setStatus('sent')
-    setForm({ name: '', email: '', subject: '', message: '' })
-    setTimeout(() => setStatus('idle'), 4000)
+  e.preventDefault();
+  setStatus("sending");
 
-    // Formspree.io pe account banao, form ID lo
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+  try {
+    const res = await fetch("https://formspree.io/f/xzdkjzlq", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(form),
-    })
+    });
+
+    if (res.ok) {
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setStatus("error");
+    }
+  } catch (error) {
+    console.error(error);
+    setStatus("error");
   }
+
+  // reset status after 4 sec
+  setTimeout(() => setStatus("idle"), 4000);
+};
 
   return (
     <section id="contact" ref={ref} className="py-24 sm:py-32 relative overflow-hidden">
@@ -90,7 +101,7 @@ export default function ContactSection() {
               {[
                 { icon: Github, href: personal.github, label: 'GitHub', color: '#e2e8f0' },
                 { icon: Linkedin, href: personal.linkedin, label: 'LinkedIn', color: '#0ea5e9' },
-                { icon: Twitter, href: personal.twitter, label: 'Twitter', color: '#00d4ff' },
+                // { icon: Twitter, href: personal.twitter, label: 'Twitter', color: '#00d4ff' },
               ].map(({ icon: Icon, href, label, color }) => (
                 <motion.a
                   key={label}
