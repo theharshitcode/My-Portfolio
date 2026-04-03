@@ -17,7 +17,7 @@ export const portfolioData = {
     availability: "Available for opportunities",
     github: "https://github.com/theharshitcode",
     linkedin: "https://linkedin.com/in/harshit-saxena-a4845a289",
-    // twitter: "https://twitter.com/harshitsaxena",
+    // twitter: "https://twitter.com/",
     resume: "/resume.pdf",
     avatar: "/avatar.jpg",
     yearsOfExperience: 2,

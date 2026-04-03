@@ -39,7 +39,7 @@ export default function Footer() {
             {[
               { icon: Github, href: personal.github },
               { icon: Linkedin, href: personal.linkedin },
-              { icon: Twitter, href: personal.twitter },
+              // { icon: Twitter, href: personal.twitter },
               { icon: Mail, href: `mailto:${personal.email}` },
             ].map(({ icon: Icon, href }, i) => (
               <motion.a
